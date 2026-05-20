@@ -319,6 +319,86 @@
             font-weight: 600;
         }
 
+        .before-start-section {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #fff5e6 0%, #ffffff 100%);
+            border-radius: 16px;
+            border: 2px solid #ffd89b;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-header svg {
+            color: var(--accent);
+        }
+
+        .requirement-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 2px solid var(--border);
+        }
+
+        .requirement-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .requirement-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .requirement-number {
+            background: var(--accent);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+
+        .requirement-item strong {
+            display: block;
+            color: var(--primary);
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .requirement-item p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .requirement-item ul {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.85rem;
+        }
+
+        .requirement-item ul li {
+            margin-bottom: 0.4rem;
+        }
+
         @media (max-width: 968px) {
             .content-grid {
                 grid-template-columns: 1fr;
@@ -382,27 +462,10 @@
                 </div>
             </div>
 
-            <!-- Card 2: Uang Saku -->
+            <!-- Card 2: NDA -->
             <div class="info-card">
                 <div class="card-header">
                     <div class="card-number">2</div>
-                    <div class="card-title">Allowance Payment Cycle</div>
-                </div>
-                <div class="card-content">
-                    <ul>
-                        <li>Attendance cycle: <strong>21st (start) → 20th (end)</strong></li>
-                        <li>Track your own attendance daily</li>
-                        <li>On the 21st: HR sends template, copy-paste from your personal records and submit to the link shared monthly</li>
-                        <li>Allowance is paid on the <strong>last day of the month</strong></li>
-                        <li>If you join outside the cycle (not on the 21st), your allowance will be prorated accordingly</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Card 3: NDA -->
-            <div class="info-card">
-                <div class="card-header">
-                    <div class="card-number">3</div>
                     <div class="card-title">NDA (Non-Disclosure Agreement)</div>
                 </div>
                 <div class="card-content">
@@ -415,6 +478,23 @@
                         <li>Maintain ParagonCorp's reputation and good name</li>
                         <li>Please ensure only authorized and legitimate applications are used when connected to Paragon's network</li>
                         <li>Violations may result in legal action</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 3: Uang Saku -->
+            <div class="info-card">
+                <div class="card-header">
+                    <div class="card-number">3</div>
+                    <div class="card-title">Allowance Payment Cycle</div>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>Attendance cycle: <strong>21st (start) → 20th (end)</strong></li>
+                        <li>Track your own attendance daily</li>
+                        <li>On the 21st: HR sends template, copy-paste from your personal records and submit to the link shared monthly</li>
+                        <li>Allowance is paid on the <strong>last day of the month</strong></li>
+                        <li>If you join outside the cycle (not on the 21st), your allowance will be prorated accordingly</li>
                     </ul>
                 </div>
             </div>
@@ -494,6 +574,42 @@
                     <div class="link-title">Beyond Business WiFi Access</div>
                     <div class="link-url">bit.ly/BeyondBusinessAccess</div>
                 </a>
+            </div>
+        </div>
+
+        <!-- Before You Start Section -->
+        <div class="before-start-section">
+            <div class="section-header">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 11l3 3L22 4"></path>
+                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                </svg>
+                Before You Start
+            </div>
+            <div class="requirement-card">
+                <div class="requirement-content">
+                    <div class="requirement-item">
+                        <div class="requirement-number">1</div>
+                        <div>
+                            <strong>Attend Onboarding Session</strong>
+                            <p>All interns are required to attend the onboarding session at the beginning of the internship period.</p>
+                        </div>
+                    </div>
+                    <div class="requirement-item">
+                        <div class="requirement-number">2</div>
+                        <div>
+                            <strong>Internship Agreement Letter</strong>
+                            <p>Complete, sign, and submit the Internship Agreement Letter (Surat Pernyataan Internship Program):</p>
+                            <ul style="margin-top: 0.5rem; padding-left: 1.25rem;">
+                                <li>Fill in your personal details and print the document</li>
+                                <li>Affix Rp 10.000 stamp duty (materai) on the signature column</li>
+                                <li>Sign the document</li>
+                                <li>Send to: <strong>Head Office ParagonCorp</strong>, Jl. Kampung Baru IV No. 4, Kel. Ulujami, Kec. Pesanggrahan, Jakarta Selatan 12250 (Attn: Tarwiyah - HR)</li>
+                                <li>Confirm submission via email: <a href="mailto:ajeng.zraini@paracorpgroup.com" style="color: var(--accent);">ajeng.zraini@paracorpgroup.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
