@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ringkasan Penting Magang Paragon</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0A0E27;
+            --accent: #FF6B35;
+            --text: #1A1A2E;
+            --text-light: #4A5568;
+            --bg: #F8F9FA;
+            --card-bg: #FFFFFF;
+            --border: #E2E8F0;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            color: var(--text);
+        }
+
+        .slide {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 3rem;
+            max-width: 1200px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .header .subtitle {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.95rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            border-radius: 16px;
+            padding: 1.75rem;
+            border-left: 4px solid var(--accent);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .info-card:nth-child(1) { animation-delay: 0.1s; }
+        .info-card:nth-child(2) { animation-delay: 0.2s; }
+        .info-card:nth-child(3) { animation-delay: 0.3s; }
+        .info-card:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card-number {
+            background: var(--accent);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 0.95rem;
+            flex-shrink: 0;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+
+        .card-content {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .card-content ul {
+            list-style: none;
+            margin: 0.5rem 0;
+        }
+
+        .card-content li {
+            padding-left: 1.25rem;
+            position: relative;
+            margin-bottom: 0.6rem;
+        }
+
+        .card-content li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .card-content ul ul {
+            margin-top: 0.5rem;
+            margin-left: 0.5rem;
+        }
+
+        .card-content ul ul li:before {
+            content: "•";
+        }
+
+        .card-content strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ffd89b 0%, #19547b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #FEE2E2;
+            color: #DC2626;
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0.5rem 0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--border);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .links-section {
+            margin-top: 2.5rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+            border-radius: 16px;
+            border: 2px solid var(--border);
+        }
+
+        .links-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .links-header svg {
+            color: var(--accent);
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+
+        .email-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .link-card-large {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding: 1.25rem;
+            background: white;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .link-card-large:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+
+        .link-card-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .link-card {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 1.25rem;
+            background: white;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .link-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+
+        .link-icon {
+            font-size: 1.75rem;
+            line-height: 1;
+        }
+
+        .link-title {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .link-url {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            word-break: break-all;
+        }
+
+        .link-description {
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--text-light);
+        }
+
+        .link-description strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        @media (max-width: 968px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .slide {
+                padding: 2rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .slide {
+                box-shadow: none;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="header">
+            <div class="subtitle">Paragon Internship Guidelines</div>
+            <h1>Key Points to Remember</h1>
+        </div>
+
+        <div class="content-grid">
+            <!-- Card 1: Jam Kerja -->
+            <div class="info-card">
+                <div class="card-header">
+                    <div class="card-number">1</div>
+                    <div class="card-title">Working Hours</div>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li><strong>HO & DC:</strong> Mon-Thu 07:30-17:00 | Fri 07:30-16:15</li>
+                        <li><strong>Plant:</strong> Mon-Thu 07:00-16:00 | Fri 07:00-16:30</li>
+                        <li><strong>Break time:</strong> 12:00-13:00 + 15 min Ashar prayer (Fri 11:30-13:00)</li>
+                        <li><strong>Weekly target:</strong> 40 working hours per week</li>
+                        <li><strong>Flexible hour arrangement:</strong>
+                            <ul style="margin-top: 0.5rem;">
+                                <li>Missing hours due to classes/leave? → Compensate after office hours or another day</li>
+                                <li>Working overtime one day? → Claim time off the next day or another day</li>
+                                <li><strong>Key principle: Mix and match your hours flexibly, as long as you hit 40 hours weekly</strong></li>
+                            </ul>
+                        </li>
+                        <li><strong>Event allowance (holidays/red days only):</strong> If you've completed 40 hours in a week and work on holidays/red days for company events (activations, offline events with KOLs, corporate events, etc.), you may claim event allowance for minimum 4 hours. <strong>Note:</strong> Regular overtime for desk work is NOT claimable—handle that during office hours</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2: Uang Saku -->
+            <div class="info-card">
+                <div class="card-header">
+                    <div class="card-number">2</div>
+                    <div class="card-title">Allowance Payment Cycle</div>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>Attendance cycle: <strong>21st (start) → 20th (end)</strong></li>
+                        <li>Track your own attendance daily</li>
+                        <li>On the 21st: HR sends template, copy-paste from your personal records and submit to the link shared monthly</li>
+                        <li>Allowance is paid on the <strong>last day of the month</strong></li>
+                        <li>If you join outside the cycle (not on the 21st), your allowance will be prorated accordingly</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 3: NDA -->
+            <div class="info-card">
+                <div class="card-header">
+                    <div class="card-number">3</div>
+                    <div class="card-title">NDA (Non-Disclosure Agreement)</div>
+                </div>
+                <div class="card-content">
+                    <div class="badge">⚠️ Mandatory Compliance</div>
+                    <ul>
+                        <li>Protect all confidential company information (data, documents, systems)</li>
+                        <li><strong>DO NOT</strong> disclose information to third parties under any circumstances</li>
+                        <li>Remains effective <strong>after internship ends</strong></li>
+                        <li>All work outputs become Company property</li>
+                        <li>Maintain ParagonCorp's reputation and good name</li>
+                        <li>Please ensure only authorized and legitimate applications are used when connected to Paragon's network</li>
+                        <li>Violations may result in legal action</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 4: Presentasi Akhir -->
+            <div class="info-card">
+                <div class="card-header">
+                    <div class="card-number">4</div>
+                    <div class="card-title">Final Presentation</div>
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li>Must be conducted <strong>max. 15 days (D-15)</strong> before internship period ends</li>
+                        <li>Participants arrange their own schedule with their Supervisor</li>
+                        <li>Main evaluator: Supervisor (supported by HR/L&D if needed)</li>
+                        <li>Submit PPT deck via <strong>bit.ly/ParagonInternFinal</strong> at the latest <strong>1 day before (D-1)</strong></li>
+                        <li>Deck submission = <strong>requirement for internship certificate</strong></li>
+                        <li><strong>Assessment criteria:</strong> project understanding, analysis, execution & impact, communication, growth mindset</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="links-section">
+            <div class="links-header">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+                Important Links
+            </div>
+            
+            <!-- Email Section with Details -->
+            <div class="email-section">
+                <div class="link-card-large">
+                    <div class="link-card-header">
+                        <div class="link-icon">📧</div>
+                        <div style="flex: 1;">
+                            <div class="link-title">Interns Email List</div>
+                            <div class="link-url" style="margin-bottom: 0.75rem;">
+                                <a href="https://docs.google.com/spreadsheets/d/1s6_8CUlbbexHh1skkkNVfjWmIN9bfrPppl-2wZEnUpU/edit?gid=0#gid=0" target="_blank" style="color: var(--accent); text-decoration: none;">
+                                    View on Google Sheets →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="link-description">
+                        <div style="margin-bottom: 0.75rem;">
+                            <strong>We use Outlook email for:</strong> Teams, scheduling meetings, sharing Office documents, internal & external communication, etc. Explore O365 online features (non-desktop apps).
+                        </div>
+                        <div>
+                            <strong>Activation steps:</strong>
+                            <ol style="margin: 0.5rem 0 0 1.25rem; padding: 0; line-height: 1.6;">
+                                <li>Go to <a href="https://office.com" target="_blank" style="color: var(--accent); text-decoration: underline;">office.com</a></li>
+                                <li>Click sign in and enter your Outlook email</li>
+                                <li>Enter initial password in "current password" and create new password in "new password"</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Links Grid -->
+            <div class="links-grid">
+                <a href="https://paracorpgroup.sharepoint.com/:p:/s/AllHRCATeams-CorcommandEB/IQBMw_Wx0O9kTqJBC6I3v8p6AUxVVd5OvO32Ojp84uQ33ig" target="_blank" class="link-card">
+                    <div class="link-icon">📊</div>
+                    <div class="link-title">Final Presentation Brief</div>
+                    <div class="link-url">SharePoint</div>
+                </a>
+                <a href="https://bit.ly/FPGuideline" target="_blank" class="link-card">
+                    <div class="link-icon">📝</div>
+                    <div class="link-title">Final Submission Form</div>
+                    <div class="link-url">bit.ly/FPGuideline</div>
+                </a>
+                <a href="https://bit.ly/BeyondBusinessAccess" target="_blank" class="link-card">
+                    <div class="link-icon">📶</div>
+                    <div class="link-title">Beyond Business WiFi Access</div>
+                    <div class="link-url">bit.ly/BeyondBusinessAccess</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            ParagonCorp Internship Program · 2026
+        </div>
+    </div>
+</body>
+</html>
